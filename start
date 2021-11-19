@@ -26,7 +26,7 @@ _get_repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "" ]]
+    if [[ $UPSTREAM_REPO == "goodcat" ]]
     then
         rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90" | base64 -d`
     elif [[ $UPSTREAM_REPO == "badcat" ]]
@@ -50,7 +50,7 @@ _run_catpack_git() {
     $(_run_python_code 'from git import Repo
 import sys
 
-OFFICIAL_UPSTREAM_REPO = "https://github.com/Mr-confused/nekopack"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/dhananjayarobots/nekopack"
 ACTIVE_BRANCH_NAME = "master"
 
 repo = Repo.init()
